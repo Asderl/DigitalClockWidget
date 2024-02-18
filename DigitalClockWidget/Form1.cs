@@ -25,6 +25,7 @@ namespace DigitalClockWidget
             timer.Elapsed += UpdateLabel;
             timer.Elapsed += UpdateOverlay;
             timer.Start();
+            button1.FlatAppearance.BorderColor = button1.Parent.BackColor;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
