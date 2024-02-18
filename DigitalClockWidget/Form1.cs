@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using System.Diagnostics;
 
 namespace DigitalClockWidget
 {
@@ -19,13 +20,14 @@ namespace DigitalClockWidget
             InitializeComponent();
         }
 
-        System.Timers.Timer timer = new System.Timers.Timer(1);
+        readonly System.Timers.Timer timer = new System.Timers.Timer(1);
         private void Form1_Load(object sender, EventArgs e)
         {
             timer.Elapsed += UpdateLabel;
             timer.Elapsed += UpdateOverlay;
             timer.Start();
             button1.FlatAppearance.BorderColor = button1.Parent.BackColor;
+            button2.FlatAppearance.BorderColor = button2.Parent.BackColor;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -62,7 +64,20 @@ namespace DigitalClockWidget
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void button2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && ActiveForm.Opacity < 1)
+            {
+                ActiveForm.Opacity += 0.1;
+            }
+
+            if (e.Button == MouseButtons.Right && ActiveForm.Opacity > 0.3)
+            {
+                ActiveForm.Opacity -= 0.1;
+            }
         }
     }
 }
