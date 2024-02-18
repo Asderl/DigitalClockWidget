@@ -23,6 +23,7 @@ namespace DigitalClockWidget
         private void Form1_Load(object sender, EventArgs e)
         {
             timer.Elapsed += UpdateLabel;
+            timer.Elapsed += UpdateOverlay;
             timer.Start();
         }
 
@@ -34,6 +35,11 @@ namespace DigitalClockWidget
         private void UpdateLabel(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void UpdateOverlay(object sender, EventArgs e)
+        {
+            TopMost = true;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
