@@ -12,6 +12,7 @@
 
 ### Exit button
 ![2024-02-18 (3)](https://github.com/Asderl/DigitalClockWidget/assets/109987125/a0459576-a506-4b17-851d-653fa03ed932)
+
 Click it to close the window
 
 ### Transparency button
@@ -23,3 +24,8 @@ Right click to increase opacity (0.3 is min)
 
 ![2024-02-18 (2)](https://github.com/Asderl/DigitalClockWidget/assets/109987125/25cf1698-f6ec-42c9-b67f-75b4e6bb156e)
 
+# TODO 
+
+- ~~Transperency button~~
+- **Pinned mode**
+- Timer mode
