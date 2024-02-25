@@ -21,6 +21,7 @@ namespace DigitalClockWidget
         }
 
         readonly System.Timers.Timer timer = new System.Timers.Timer(1);
+        bool isPinned = false;
         private void Form1_Load(object sender, EventArgs e)
         {
             timer.Elapsed += UpdateLabel;
@@ -28,6 +29,8 @@ namespace DigitalClockWidget
             timer.Start();
             button1.FlatAppearance.BorderColor = button1.Parent.BackColor;
             button2.FlatAppearance.BorderColor = button2.Parent.BackColor;
+            button3.FlatAppearance.BorderColor = button3.Parent.BackColor;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -55,7 +58,7 @@ namespace DigitalClockWidget
 
         private void panel1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && !isPinned)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
@@ -77,6 +80,23 @@ namespace DigitalClockWidget
             if (e.Button == MouseButtons.Right && ActiveForm.Opacity > 0.3)
             {
                 ActiveForm.Opacity -= 0.1;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            isPinned = !isPinned;
+            Control control = (Control)sender;
+            if (isPinned) 
+            {
+                control.BackColor = Color.FromArgb(192, 255, 255, 255);
+                control.BackgroundImage = (Image)Properties.Resources.pin;
+            }
+            else
+            {
+                control.BackColor = Color.Transparent;
+                control.BackgroundImage = (Image)Properties.Resources.white_pin;
+
             }
         }
     }
