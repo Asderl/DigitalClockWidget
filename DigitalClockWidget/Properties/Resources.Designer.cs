@@ -93,6 +93,16 @@ namespace DigitalClockWidget.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap transparency_black {
+            get {
+                object obj = ResourceManager.GetObject("transparency_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap white_pin {
             get {
                 object obj = ResourceManager.GetObject("white_pin", resourceCulture);

@@ -99,5 +99,29 @@ namespace DigitalClockWidget
 
             }
         }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control.BackgroundImage = (Image)Properties.Resources.transparency_black;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control.BackgroundImage = (Image)Properties.Resources.transparency;
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control.BackgroundImage = (Image)Properties.Resources.pin;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control.BackgroundImage = (Image)Properties.Resources.white_pin;
+        }
     }
 }

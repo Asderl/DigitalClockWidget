@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="clock-line-icon.ico" />
+    <None Include="Resources\transparency_black.png" />
     <None Include="Resources\exit2.png" />
     <None Include="Resources\color-adjust-icon-white.png" />
     <None Include="Resources\white_pin.png" />
